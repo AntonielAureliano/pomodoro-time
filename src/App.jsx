@@ -1,11 +1,12 @@
 import './App.css'
+import { Time } from './components/Time'
 
 function App() {
 
   return (
-    <div>
-
-    </div>
+    <main>
+      <Time />
+    </main>
   )
 }
 
