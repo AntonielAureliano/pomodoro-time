@@ -9,8 +9,17 @@ body {
 }
 
 main {
-    padding-top: 50px;
-    max-width: 340px;
     margin: 0 auto;
+    max-width: 340px;
+    padding-top: 50px;
     text-align: center;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    display: inline-block;
+    width: 100px;
 }
