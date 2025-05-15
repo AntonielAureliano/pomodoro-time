@@ -1,3 +1,8 @@
 .timeButton, .timeSettings {
     margin-top: 20px;
 } 
+
+.timeSettings {
+    display: flex;
+    justify-content: center;
+}

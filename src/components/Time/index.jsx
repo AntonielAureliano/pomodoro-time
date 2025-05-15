@@ -1,6 +1,7 @@
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import { PlayButton } from "../PlayButton";
 import { PauseButton } from "../PauseButton";
+import { SettingsButton } from "../SettingsButton";
 
 import 'react-circular-progressbar/dist/styles.css';
 import styles from './Time.module.css';
@@ -25,6 +26,9 @@ export const Time = () => {
             <div className={styles.timeButton}>
                 <PlayButton />
                 <PauseButton />
+            </div>
+            <div className={styles.timeSettings}>
+                <SettingsButton />
             </div>
 
         </div>
