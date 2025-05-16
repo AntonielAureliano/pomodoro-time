@@ -1,0 +1,42 @@
+.settingsContent {
+    text-align: left;
+}
+
+.settingsContent label {
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.slider {
+    border-radius: 20px;
+    height: 40px;
+}
+
+.thumb {
+    border-radius: 20px;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+
+.sliderWork {
+    border: 2px solid var(--red);
+}
+
+.slider .thumb {
+    background-color: var(--red);
+}
+
+.sliderBreak {
+    border: 2px solid var(--green);
+}
+
+.sliderBreak .thumb {
+    background-color: var(--green);
+}
+
+.settingsBackButton {
+    margin-top: 20px;
+    text-align: center;
+}
