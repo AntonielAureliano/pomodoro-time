@@ -8,9 +8,19 @@ import './App.css'
 function App() {
 
   const [showSettings, setShowSettings] = useState(true);
+  const [workMinutes, setWorkMinutes] = useState(45);
+  const [breakMinutes, setBreakMinutes] = useState(15);
+  
   return (
     <main>
-      <SettingsContext.Provider value={{}}>
+      <SettingsContext.Provider value={{
+        showSettings,
+        workMinutes,
+        breakMinutes,
+        setShowSettings,
+        setWorkMinutes,
+        setBreakMinutes,
+      }}>
         { showSettings ? <Settings /> : <Time /> }
       </SettingsContext.Provider>
       
