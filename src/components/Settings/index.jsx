@@ -1,8 +1,9 @@
 import ReactSlider from "react-slider";
 import { SettingsContext } from "../SettingsContext";
+import { useContext } from "react";
+import { BackButton } from "../BackButton";
 
 import styles from "./Settings.module.css";
-import { useContext } from "react";
 
 export const Settings = () => {
     const settingsInfo = useContext(SettingsContext);
@@ -24,10 +25,13 @@ export const Settings = () => {
                 className={`${styles.slider} ${styles.sliderBreak}`}    
                 thumbClassName={styles.thumb}
                 value={settingsInfo.breakMinutes}
-                onChange={newValue => setBreakMinutes(newValue)}
+                onChange={newValue => settingsInfo.setBreakMinutes(newValue)}
                 min={1}
                 max={120}
             />
+            <div className={styles.settingsBackButton}>
+                <BackButton onClick={() => settingsInfo.setShowSettings(false)} />
+            </div>
         </div>
     )
 }
