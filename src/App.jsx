@@ -1,11 +1,17 @@
+import { Time } from "./components/Time";
+import { Settings } from "./components/Settings";
+import { useState } from "react";
+
 import './App.css'
-import { Time } from './components/Time'
 
 function App() {
 
+  const [showSettings, setShowSettings] = useState(true);
   return (
     <main>
-      <Time />
+     { showSettings ? <Settings /> : <Time /> }
+      
+      
     </main>
   )
 }
