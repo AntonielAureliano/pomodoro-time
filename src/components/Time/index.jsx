@@ -1,15 +1,15 @@
+import { useContext, useState, useEffect, useRef } from "react";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import { PlayButton } from "../PlayButton";
 import { PauseButton } from "../PauseButton";
 import { SettingsButton } from "../SettingsButton";
 import { SettingsContext } from "../SettingsContext";
-import { useContext, useState, useEffect, useRef } from "react";
 
 import 'react-circular-progressbar/dist/styles.css';
 import styles from './Time.module.css';
 
 const red = '#f54e4e';
-//const green = '#4aec8c';
+const green = '#4aec8c';
 
 export const Time = () => {
     const settingsInfo = useContext(SettingsContext);
@@ -32,7 +32,7 @@ export const Time = () => {
     }
 
     const tick = () => {
-        secondsLeft.current--;
+        secondsLeftRef.current--;
         setSecondsLeft(secondsLeftRef.current);
     }
 
@@ -75,16 +75,19 @@ export const Time = () => {
     return (
         <div>
             <CircularProgressbar 
-                value={66} 
-                text={'66%'} 
+                value={percentage} 
+                text={minutes + ':' + seconds} 
                 styles={buildStyles({
-                    pathColor: red,
+                    pathColor: mode === 'work' ? red : green,
                     textColor: '#fff',
                     trailColor: 'rgba(255, 255, 255, 0.2)',
                 })} 
             />
             <div className={styles.timeButton}>
-                {isPaused ? <PlayButton onClick={() => setPaused(false)} /> : <PauseButton onClick={() => setPaused(true)} />}
+                {isPaused 
+                    ? <PlayButton onClick={() => { setPaused(false); isPausedRef.current = false }} /> 
+                    : <PauseButton onClick={() => { setPaused(true); isPausedRef.current = true }} /> 
+                }
             </div>
             <div className={styles.timeSettings}>
                 <SettingsButton onClick={() => settingsInfo.setShowSettings(true)} />
